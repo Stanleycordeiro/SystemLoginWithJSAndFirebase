@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: #676767;
+}
+
+#mainLogin {
+  background-color: rgb(27, 74, 139);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#cardLogin {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+}
+
+#btnLogin {
+  width: 100%;
+  background-color: #42bb70;
+  border: none;
+}
+
+#btnRegister {
+  background-color: rgb(37, 125, 101);
+  width: 150px;
+  border: 0.5px solid rgb(208, 208, 208);
+}
+
+#btnRecupere {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    font-size: 15px;
+    display: none;
+}
+
+.alert {
+  display: none;
+}
