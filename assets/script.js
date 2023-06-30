@@ -31,7 +31,25 @@ function toggleBtnLogin() {
 
 //redireciona para a pagina home
 function login() {
-  window.location.href = "./pages/home/home.html";
+  let email = inputEmail.value;
+  let password = inputPassword.value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((response) => {
+      window.location.href = "./pages/home/home.html";
+    })
+    .catch((error) => {
+      alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error) {
+  if(error.code == "auth/user-not-found") {
+    return "Usuario não cadastrado";
+  }
+  return error.message;
 }
 
 function register() {
@@ -86,4 +104,3 @@ function togglePasswordErros() {
 window.addEventListener("load", function () {
   btnLogin.disabled = true;
 });
-

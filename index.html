@@ -97,7 +97,12 @@
       </div>
 
       <div class="container p-5 mt-1 d-flex justify-content-center">
-        <button type="button" onclick="register();" class="btn btn-secondary shadow shadow-sm" id="btnRegister">
+        <button
+          type="button"
+          onclick="register();"
+          class="btn btn-secondary shadow shadow-sm"
+          id="btnRegister"
+        >
           Registre-se
         </button>
       </div>
@@ -113,8 +118,28 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
-   
+
     <script src="./assets/validations.js"></script>
     <script src="./assets/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBkrL-h11b6pQuJL5AqsuBN-lcXi8c5xsU",
+
+        authDomain: "expensecontrolapplication.firebaseapp.com",
+
+        projectId: "expensecontrolapplication",
+
+        storageBucket: "expensecontrolapplication.appspot.com",
+
+        messagingSenderId: "304119970251",
+
+        appId: "1:304119970251:web:2c6005c3c0caafee899e4e",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      
+    </script>
   </body>
 </html>
