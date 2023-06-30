@@ -1,33 +1,44 @@
-//elementos
+// elementos
 const btnLogin = document.getElementById("btnLogin");
 const btnRecuperar = document.getElementById("btnRecuperar");
 const inputEmail = document.getElementById("inputEmail");
 const inputPassword = document.getElementById("inputPassword");
 
-//liverar button login após verificar email valido 
-function onChangeEmail(){
+// liberar botão de login após verificar e-mail válido
+function onChangeEmail() {
   toggleEmailErros();
   toggleBtnLogin();
 }
-//liverar button login após verificar password valido
-function onChangePassword(){
+
+// liberar botão de login após verificar senha válida
+function onChangePassword() {
   toggleBtnLogin();
   togglePasswordErros();
 }
 
-//toda vez que a pagina e recarregada o botão permanece desabilitado
-window.addEventListener("load", function () {
-  btnLogin.disabled = true;
-});
+// acionar verificação ao digitar no campo de e-mail
+inputEmail.addEventListener("input", onChangeEmail);
 
-//função que habilita e desabilita os buttons
-function toggleBtnLogin(){
+// acionar verificação ao digitar no campo de senha
+inputPassword.addEventListener("input", onChangePassword);
+
+// função que habilita ou desabilita o botão de login
+function toggleBtnLogin() {
   const emailValid = isEmailValid();
-  const passwordValid = isEmailValid();
+  const passwordValid = isPasswordValid();
   btnLogin.disabled = !emailValid || !passwordValid;
 }
 
-//valida se o email e valido
+//redireciona para a pagina home
+function login() {
+  window.location.href = "./pages/home/home.html";
+}
+
+function register() {
+  window.location.href = "./pages/register/register.html";
+}
+
+// valida se o e-mail é válido
 function isEmailValid() {
   let email = inputEmail.value;
   if (!email) {
@@ -36,7 +47,7 @@ function isEmailValid() {
   return validateEmail(email);
 }
 
-//valida se o password é valido
+// valida se a senha é válida
 function isPasswordValid() {
   let password = inputPassword.value;
   if (!password) {
@@ -45,7 +56,7 @@ function isPasswordValid() {
   return true;
 }
 
-//chama as mensagens de erro do email
+// chama as mensagens de erro do e-mail
 function toggleEmailErros() {
   let email = inputEmail.value;
   if (!email) {
@@ -61,7 +72,7 @@ function toggleEmailErros() {
   }
 }
 
-//chama as mensagens de erro do password
+// chama as mensagens de erro da senha
 function togglePasswordErros() {
   let password = inputPassword.value;
   if (!password) {
@@ -70,3 +81,9 @@ function togglePasswordErros() {
     document.getElementById("errorPasswordRequire").style.display = "none";
   }
 }
+
+//quando atulaizar a pagina btn login desativado
+window.addEventListener("load", function () {
+  btnLogin.disabled = true;
+});
+

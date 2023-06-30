@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Document</title>
+    <title>Login - expense control application</title>
   </head>
   <body>
     <div id="mainLogin">
@@ -30,29 +30,44 @@
                   class="form-control"
                   id="inputEmail"
                   aria-describedby="emailHelp"
-                  onchange="onChangeEmail()"
+                  onchange="onChangeEmail();"
                 />
-                <div class="alert alert-danger mt-3 text-center p-1" id="errorEmailRequire" role="alert">
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorEmailRequire"
+                  role="alert"
+                >
                   Email origatório
                 </div>
-                <div class="alert alert-danger mt-3 text-center p-1" id="errorEmailInvalid" role="alert">
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorEmailInvalid"
+                  role="alert"
+                >
                   Email invalido
-                </div>                              
+                </div>
               </div>
               <div class="mb-3">
-                <label for="inputPassword"  class="form-label">Password</label>
+                <label for="inputPassword" class="form-label">Password</label>
                 <input
                   type="password"
                   class="form-control"
                   id="inputPassword"
-                  onchange="onChangePassword()"
+                  onchange="onChangePassword();"
                 />
-                <div class="alert alert-danger mt-3 text-center p-1" id="errorPasswordRequire" role="alert">
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorPasswordRequire"
+                  role="alert"
+                >
                   Senha obrigatória
-                </div> 
-                <div class="alert alert-danger mt-3 text-center p-1" role="alert">
+                </div>
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  role="alert"
+                >
                   Senha invalida
-                </div> 
+                </div>
               </div>
               <div class="mb-3 form-check">
                 <input
@@ -65,10 +80,11 @@
                 >
               </div>
               <button
-                type="submit"
+                type="button"
                 class="btn btn-primary"
                 id="btnLogin"
                 disabled="true"
+                onclick="login();"
               >
                 Login
               </button>
@@ -81,7 +97,7 @@
       </div>
 
       <div class="container p-5 mt-1 d-flex justify-content-center">
-        <button class="btn btn-secondary shadow shadow-sm" id="btnRegister">
+        <button type="button" onclick="register();" class="btn btn-secondary shadow shadow-sm" id="btnRegister">
           Registre-se
         </button>
       </div>
@@ -97,7 +113,8 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/script.js"></script>
+   
     <script src="./assets/validations.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

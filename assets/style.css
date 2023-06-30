@@ -30,13 +30,13 @@
 }
 
 #btnRecupere {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    font: inherit;
-    font-size: 15px;
-    display: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  font-size: 15px;
+  display: none;
 }
 
 .alert {
