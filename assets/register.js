@@ -22,17 +22,17 @@ form.confirmPassworrd().addEventListener("input", onChangeConfirmPassword);
 
 //função validação input email chamando error message
 function onChangeEmail() {
-  const email = form.email().value;
+  let email = form.email().value;
   form.messageErrorRequireEmail().style.display = email ? "none" : "block";
   form.messageErrorInvalidEmail().style.display = validateEmail(email)
     ? "none"
     : "block";
-    toogleBtnRegister();
+  toogleBtnRegister();
 }
 
 //função validação input password chamando error message
 function onChangePassword() {
-  const password = form.password().value;
+  let password = form.password().value;
   form.messageErrorRequirePassword().style.display = password
     ? "none"
     : "block";
@@ -50,8 +50,8 @@ function onChangeConfirmPassword() {
 
 //função de validação de senha iguais
 function validatePasswordMatch() {
-  const confirmPassworrd = form.confirmPassworrd().value;
-  const password = form.password().value;
+  let confirmPassworrd = form.confirmPassworrd().value;
+  let password = form.password().value;
   form.messageErrorConfirmPassword().style.display =
     confirmPassworrd == password ? "none" : "block";
 }
@@ -63,18 +63,62 @@ function toogleBtnRegister() {
 
 //função de validação do formulario
 function isFormValid() {
-  const email = form.email().value;
+  let email = form.email().value;
   if (!email || !validateEmail(email)) {
     return false;
   }
-  const password = form.password().value;
+  let password = form.password().value;
   if (!password || password.length < 6) {
     return false;
   }
 
-  const confirmPassworrd = form.confirmPassworrd().value;
+  let confirmPassworrd = form.confirmPassworrd().value;
   if (password != confirmPassworrd) {
     return false;
   }
   return true;
 }
+
+//função para registrar novo usuario ao clicar no button
+function registerFn() {
+  showLoading();
+
+  let email = form.email().value;
+  let password = form.password().value;
+
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(() => {
+        hideLoading();
+        window.location.href = "../../pages/home/home.html";
+    })
+    .catch((error) => {
+      hideLoading();
+      alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error) {
+    switch (error.code) {
+        case "auth/email-already-in-use":
+          return "O email já está em uso. Por favor, tente outro email.";
+          break;
+        case "auth/invalid-email":
+          return "O email inserido é inválido. Por favor, insira um email válido.";
+          break;
+        case "auth/weak-password":
+          return "A senha deve ter pelo menos 6 caracteres.";
+          break;
+        default:
+          return "Ocorreu um erro ao criar o usuário. Por favor, tente novamente.";
+          break;
+      }
+    
+  return error.code;
+}
+
+//quando atulaizar a pagina btn login desativado
+window.addEventListener("load", function () {
+  form.btnRegister().disabled = true;
+});

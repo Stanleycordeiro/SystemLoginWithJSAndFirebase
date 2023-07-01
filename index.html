@@ -15,7 +15,10 @@
     <title>Login - Expense control application</title>
   </head>
   <body>
-    <div id="mainLogin" class="d-flex justify-content-center align-items-center">
+    <div
+      id="main"
+      class="d-flex justify-content-center align-items-center"
+    >
       <div class="container row">
         <!-- <div class="loadingMain justify-content-center d-flex" id="loadingScreen">
         <div class="load-wrapp">
@@ -148,21 +151,6 @@
     <script src="./assets/loading.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyBkrL-h11b6pQuJL5AqsuBN-lcXi8c5xsU",
-
-        authDomain: "expensecontrolapplication.firebaseapp.com",
-
-        projectId: "expensecontrolapplication",
-
-        storageBucket: "expensecontrolapplication.appspot.com",
-
-        messagingSenderId: "304119970251",
-
-        appId: "1:304119970251:web:2c6005c3c0caafee899e4e",
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="./assets/firebase_init.js"></script>
   </body>
 </html>

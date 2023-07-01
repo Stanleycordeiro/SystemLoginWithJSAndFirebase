@@ -15,78 +15,86 @@
     <title>Registro - Expense control application</title>
   </head>
   <body>
-    <div
-      class="d-flex align-items-center justify-content-center"
-      id="mainRegister"
-    >
+    <div class="d-flex align-items-center justify-content-center" id="main">
       <div class="container row">
         <!-- <h1 class="text-center pt-0 p-5 pb-4"><b>Registro</b></h1> -->
         <div class="container d-flex justify-content-center mb-5">
           <div class="card shadow" id="cardRegister">
-            
             <div class="card-body">
               <h5 class="text-center">Registre-se</h5>
               <form class="p-4 pt-0">
                 <div class="mb-3 mt-3">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" onchange="onChangeEmail();" />
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail"
+                    onchange="onChangeEmail();"
+                  />
                 </div>
                 <div
-                    class="alert alert-danger mt-3 text-center p-1"
-                    id="errorEmailRequire"
-                    role="alert"
-                  >
-                    Email origatório
-                  </div>
-                  <div
-                    class="alert alert-danger mt-3 text-center p-1"
-                    id="errorEmailInvalid"
-                    role="alert"
-                  >
-                    Email invalido
-                  </div>
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorEmailRequire"
+                  role="alert"
+                >
+                  Email origatório
+                </div>
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorEmailInvalid"
+                  role="alert"
+                >
+                  Email invalido
+                </div>
                 <div class="mb-3">
                   <label class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="inputPassword" onchange="onChangePassword();" />
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                    onchange="onChangePassword();"
+                  />
                 </div>
                 <div
-                    class="alert alert-danger mt-3 text-center p-1"
-                    id="errorPasswordRequire"
-                    role="alert"
-                  >
-                    Senha obrigatória
-                  </div>
-                  <div
-                    class="alert alert-danger mt-3 text-center p-1"
-                    id="errorPasswordInvalid"
-                    role="alert"
-                  >
-                    Senha deve ter no minimo 6 caracteres
-                  </div>
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorPasswordRequire"
+                  role="alert"
+                >
+                  Senha obrigatória
+                </div>
+                <div
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorPasswordInvalid"
+                  role="alert"
+                >
+                  Senha deve ter no minimo 6 caracteres
+                </div>
                 <div class="mb-3">
                   <label class="form-label">Confirmar senha</label>
-                  <input type="password" class="form-control" id="inputConfirmPassword" onchange="onChangeConfirmPassword();" />
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputConfirmPassword"
+                    onchange="onChangeConfirmPassword();"
+                  />
                 </div>
                 <div
-                    class="alert alert-danger mt-3 text-center p-1"
-                    id="errorConfirmPassword"
-                    role="alert"
-                  >
-                    Senhas devem ser iguais
-                  </div>
+                  class="alert alert-danger mt-3 text-center p-1"
+                  id="errorConfirmPassword"
+                  role="alert"
+                >
+                  Senhas devem ser iguais
+                </div>
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-primary mt-2 mb-3"
                   id="btnRegister"
                   disabled="true"
+                  onclick="registerFn();"
                 >
                   Registrar
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  id="btnLogin"
-                >
+                <button type="button" class="btn btn-primary" id="btnLogin">
                   Login
                 </button>
               </form>
@@ -95,6 +103,14 @@
         </div>
       </div>
     </div>
+
+    
+    <script src="../../assets/validations.js"></script>
+    <script src="../../assets/register.js"></script>
+    <script src="../../assets/loading.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="../../assets/firebase_init.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -105,7 +121,5 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
-    <script src="../../assets/validations.js"></script>
-    <script src="../../assets/register.js"></script>
   </body>
 </html>

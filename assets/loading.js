@@ -1,5 +1,5 @@
 function showLoading() {  
-  let divMain = document.getElementById("mainLogin");  
+  let divMain = document.getElementById("main");  
   let screenLoading = document.createElement("div");
   screenLoading.classList.add(
     "loadingMain",
