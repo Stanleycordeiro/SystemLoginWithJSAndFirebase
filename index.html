@@ -15,9 +15,9 @@
     <title>Login - expense control application</title>
   </head>
   <body>
-    <div id="mainLogin">
-<!-- 
-      <div class="loadingMain justify-content-center d-flex" id="loadingScreen">
+    <div id="mainLogin" class="d-flex justify-content-center align-items-center">
+      <div class="container row">
+        <!-- <div class="loadingMain justify-content-center d-flex" id="loadingScreen">
         <div class="load-wrapp">
           <div class="load-5">
             <h6 class="text-white">Carregando...</h6>
@@ -30,103 +30,107 @@
         </div>
       </div> -->
 
-      <div class="container d-flex justify-content-center pt-5">
-        <div class="card mt-5 shadow" id="cardLogin">
-          <div class="card-body">
-            <h4 class="text-center">Inicie sua sessão</h4>
+        <h1 class="text-center text-white p-5">
+          Expense Control Application
+        </h1>
+        <div class="container d-flex justify-content-center">
+          <div class="card mt-5 shadow" id="cardLogin">
+            <div class="card-body">
+              <h4 class="text-center">Inicie sua sessão</h4>
 
-            <form class="p-4">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Email address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail"
-                  aria-describedby="emailHelp"
-                  onchange="onChangeEmail();"
-                />
-                <div
-                  class="alert alert-danger mt-3 text-center p-1"
-                  id="errorEmailRequire"
-                  role="alert"
-                >
-                  Email origatório
+              <form class="p-4">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail"
+                    aria-describedby="emailHelp"
+                    onchange="onChangeEmail();"
+                  />
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorEmailRequire"
+                    role="alert"
+                  >
+                    Email origatório
+                  </div>
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorEmailInvalid"
+                    role="alert"
+                  >
+                    Email invalido
+                  </div>
                 </div>
-                <div
-                  class="alert alert-danger mt-3 text-center p-1"
-                  id="errorEmailInvalid"
-                  role="alert"
-                >
-                  Email invalido
+                <div class="mb-3">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                    onchange="onChangePassword();"
+                  />
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorPasswordRequire"
+                    role="alert"
+                  >
+                    Senha obrigatória
+                  </div>
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    role="alert"
+                  >
+                    Senha invalida
+                  </div>
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  onchange="onChangePassword();"
-                />
-                <div
-                  class="alert alert-danger mt-3 text-center p-1"
-                  id="errorPasswordRequire"
-                  role="alert"
-                >
-                  Senha obrigatória
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Lembrar da senha</label
+                  >
                 </div>
-                <div
-                  class="alert alert-danger mt-3 text-center p-1"
-                  role="alert"
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="btnLogin"
+                  disabled="true"
+                  onclick="login();"
                 >
-                  Senha invalida
-                </div>
-              </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1"
-                  >Lembrar da senha</label
+                  Login
+                </button>
+                <button
+                  class="mt-3 mb-0 ms-2"
+                  type="button"
+                  id="btnRecupere"
+                  onclick="recoveryPassword();"
                 >
-              </div>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="btnLogin"
-                disabled="true"
-                onclick="login();"
-              >
-                Login
-              </button>
-              <button class="mt-3 mb-0 ms-2" type="button" id="btnRecupere" onclick="recoveryPassword();">
-                * Recupere sua senha
-              </button>
-            </form>
+                  * Recupere sua senha
+                </button>
+              </form>
+            </div>
           </div>
         </div>
+
+        <div class="container p-5 mt-1 d-flex justify-content-center">
+          <button
+            type="button"
+            onclick="register();"
+            class="btn btn-secondary shadow shadow-sm"
+            id="btnRegister"
+          >
+            Registre-se
+          </button>
+        </div>
       </div>
-
-      <div class="container p-5 mt-1 d-flex justify-content-center">
-        <button
-          type="button"
-          onclick="register();"
-          class="btn btn-secondary shadow shadow-sm"
-          id="btnRegister"
-        >
-          Registre-se
-        </button>
-
-      
-      </div>
-
-   
     </div>
-    
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -161,7 +165,4 @@
       firebase.initializeApp(firebaseConfig);
     </script>
   </body>
-  
-    
-  
 </html>
