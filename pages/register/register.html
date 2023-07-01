@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Registro - expense control application</title>
+    <title>Registro - Expense control application</title>
   </head>
   <body>
     <div
@@ -21,7 +21,7 @@
     >
       <div class="container row">
         <!-- <h1 class="text-center pt-0 p-5 pb-4"><b>Registro</b></h1> -->
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center mb-5">
           <div class="card shadow" id="cardRegister">
             
             <div class="card-body">
@@ -29,7 +29,7 @@
               <form class="p-4 pt-0">
                 <div class="mb-3 mt-3">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control" />
+                  <input type="email" class="form-control" id="inputEmail" onchange="onChangeEmail();" />
                 </div>
                 <div
                     class="alert alert-danger mt-3 text-center p-1"
@@ -47,7 +47,7 @@
                   </div>
                 <div class="mb-3">
                   <label class="form-label">Senha</label>
-                  <input type="password" class="form-control" />
+                  <input type="password" class="form-control" id="inputPassword" onchange="onChangePassword();" />
                 </div>
                 <div
                     class="alert alert-danger mt-3 text-center p-1"
@@ -58,16 +58,18 @@
                   </div>
                   <div
                     class="alert alert-danger mt-3 text-center p-1"
+                    id="errorPasswordInvalid"
                     role="alert"
                   >
                     Senha deve ter no minimo 6 caracteres
                   </div>
                 <div class="mb-3">
                   <label class="form-label">Confirmar senha</label>
-                  <input type="password" class="form-control" />
+                  <input type="password" class="form-control" id="inputConfirmPassword" onchange="onChangeConfirmPassword();" />
                 </div>
                 <div
                     class="alert alert-danger mt-3 text-center p-1"
+                    id="errorConfirmPassword"
                     role="alert"
                   >
                     Senhas devem ser iguais
@@ -103,5 +105,7 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
+    <script src="../../assets/validations.js"></script>
+    <script src="../../assets/register.js"></script>
   </body>
 </html>
