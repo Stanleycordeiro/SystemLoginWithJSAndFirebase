@@ -37,6 +37,17 @@ function toggleBtnLogin() {
   btnLogin.disabled = !emailValid || !passwordValid;
 }
 
+//função para verificar usuário logado
+document.addEventListener("DOMContentLoaded", function () {
+ 
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      showLoading();
+      window.location.href = "./pages/home/home.html";
+    } 
+  });
+});
+
 //função recuperar senha
 function recoveryPassword() {
   let email = inputEmail.value;

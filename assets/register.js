@@ -30,6 +30,11 @@ function onChangeEmail() {
   toogleBtnRegister();
 }
 
+function loginPg() {
+    window.location.href = "../../index.html";
+  }
+  
+
 //função validação input password chamando error message
 function onChangePassword() {
   let password = form.password().value;
