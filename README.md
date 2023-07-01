@@ -1,2 +1,2 @@
-# expenseControlApplication
-Aplicação de controle de gastos. 
+# SystemLoginWithJSandFirebaseAuth
+Sistema de login com JS e Firebase. 
