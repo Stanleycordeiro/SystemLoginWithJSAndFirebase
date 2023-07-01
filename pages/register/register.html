@@ -20,28 +20,63 @@
       id="mainRegister"
     >
       <div class="container row">
-        <h1 class="text-center text-white">Registro</h1>
+        <!-- <h1 class="text-center pt-0 p-5 pb-4"><b>Registro</b></h1> -->
         <div class="container d-flex justify-content-center">
-          <div class="card mt-5 shadow" id="cardRegister">
-
+          <div class="card shadow" id="cardRegister">
+            
             <div class="card-body">
+              <h5 class="text-center">Registre-se</h5>
               <form class="p-4 pt-0">
                 <div class="mb-3 mt-3">
                   <label class="form-label">Email</label>
                   <input type="email" class="form-control" />
                 </div>
+                <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorEmailRequire"
+                    role="alert"
+                  >
+                    Email origatório
+                  </div>
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorEmailInvalid"
+                    role="alert"
+                  >
+                    Email invalido
+                  </div>
                 <div class="mb-3">
                   <label class="form-label">Senha</label>
                   <input type="password" class="form-control" />
                 </div>
+                <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    id="errorPasswordRequire"
+                    role="alert"
+                  >
+                    Senha obrigatória
+                  </div>
+                  <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    role="alert"
+                  >
+                    Senha deve ter no minimo 6 caracteres
+                  </div>
                 <div class="mb-3">
-                  <label class="form-label">Repita sua senha</label>
+                  <label class="form-label">Confirmar senha</label>
                   <input type="password" class="form-control" />
                 </div>
+                <div
+                    class="alert alert-danger mt-3 text-center p-1"
+                    role="alert"
+                  >
+                    Senhas devem ser iguais
+                  </div>
                 <button
                   type="submit"
                   class="btn btn-primary mt-2 mb-3"
                   id="btnRegister"
+                  disabled="true"
                 >
                   Registrar
                 </button>
