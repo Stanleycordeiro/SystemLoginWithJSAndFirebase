@@ -5,6 +5,13 @@
   color: #676767;
 }
 
+#main {
+  
+  height: 100vh;
+  background-color: #284b66;
+  
+}
+
 /* Loading style */
 .loadingMain {
   position: fixed;
